@@ -1,0 +1,15 @@
+package org.example;
+
+public class Estudiante {
+    public String apellidos;
+    public String nombre;
+    public String curso;
+    public int edad;
+
+    public Estudiante(String apellidos, String nombre, String curso, int edad) {
+        this.apellidos = apellidos;
+        this.nombre = nombre;
+        this.curso = curso;
+        this.edad = edad;
+    }
+}
