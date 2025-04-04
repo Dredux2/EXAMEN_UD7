@@ -1,5 +1,8 @@
 package org.example;
-
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+@Getter @Setter @ToString
 public class Estudiante {
     public String apellidos;
     public String nombre;
