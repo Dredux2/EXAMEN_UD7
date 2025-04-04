@@ -5,6 +5,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 @Getter @Setter @ToString
 public class Excursion {
@@ -40,8 +41,16 @@ public class Excursion {
         String curso = sc.nextLine();
 
         System.out.print("Inserta su edad: ");
-        int edad = sc.nextInt();
-
+        int edad = 0;
+        boolean var = false;
+        while (!var){
+            try {
+                edad = sc.nextInt();
+            } catch (InputMismatchException error){
+                System.out.println("Edad Incorrecta, intentalo de nuevo.");
+            }
+            var = true;
+        }
         Estudiante estudiante = new Estudiante(apellidos, nombre, curso, edad);
 
         if (!listaAsistentes.contains(estudiante)){
@@ -58,7 +67,7 @@ public class Excursion {
 
     public void verAsistentes(){
         for (Estudiante estudiante : listaAsistentes){
-            System.out.println(estudiante.toString());
+            System.out.println(estudiante);
         }
     }
 
